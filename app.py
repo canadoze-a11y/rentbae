@@ -27,7 +27,10 @@ OUTPUT FORMAT:
 """
 
 def analyze_content(content):
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    # Try adding "-001" or "-latest" if the short name fails
+model = genai.GenerativeModel('gemini-1.5-flash-001') 
+# OR
+model = genai.GenerativeModel('gemini-1.5-flash-latest')
     response = model.generate_content([SYSTEM_PROMPT, content])
     return response.text
 
