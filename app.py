@@ -27,12 +27,10 @@ OUTPUT FORMAT:
 """
 
 def analyze_content(content):
-    # Try adding "-001" or "-latest" if the short name fails
-        model = genai.GenerativeModel('gemini-1.5-flash-001') 
-# OR
+    # We use the 'latest' version to avoid 404 errors
     model = genai.GenerativeModel('gemini-1.5-flash-latest')
-     response = model.generate_content([SYSTEM_PROMPT, content])
-     return response.text
+    response = model.generate_content([SYSTEM_PROMPT, content])
+    return response.text
 
 # 2. THE WEBSITE FRONTEND
 st.set_page_config(page_title="RentBae Lease Verifier", page_icon="🛡️")
