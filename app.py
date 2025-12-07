@@ -4,7 +4,7 @@ from PIL import Image
 
 # 1. CONFIGURE THE BRAIN
 # We access the API key from Streamlit's secrets (setup in Step 3)
-api_key = st.secrets["AIzaSyDSzSTj6dSWAYZAO4pt5_1nnMcFI8GV9IE"]
+api_key = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=api_key)
 
 # The "Twin-Verify" System Prompt
